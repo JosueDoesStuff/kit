@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Button</title>
+    <style>
+        #brawlButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #iframeContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="brawlButton">Click Me</button>
+
+    <div id="iframeContainer">
+        <iframe src=""></iframe>
+    </div>
+
+    <script>
+        const button = document.getElementById('brawlButton');
+        const iframeContainer = document.getElementById('iframeContainer');
+        const iframe = iframeContainer.querySelector('iframe');
+
+        button.addEventListener('click', () => {
+            button.textContent = 'Get Kit Brawl Stars';
+            iframe.src = 'https://link.brawlstars.com/en/?action=voucher&code=b647c71d-41a5-42c4-a10f-8d47952d82f3';
+            iframeContainer.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
